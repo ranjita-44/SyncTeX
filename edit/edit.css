@@ -9,11 +9,20 @@ body{
     place-items: center;
     background-color: #f5f5f5;
 }
-.container{
+.tool-container{
     width: 60%;
     display: grid;
     gap: 0;
 }
+.textbox-container {
+    display: flex; /* Enables flexbox layout */
+    justify-content: flex-start; /* Aligns items to the start of the container */
+}
+.flex-textbox-container {
+    display: flex;
+    justify-content: space-between; /* Ensures space between the divs */
+}
+
 .tool-list {
     display: flex;
     flex-flow: row nowrap;
@@ -38,7 +47,15 @@ body{
 .tool--btn:hover{
     background-color: #dddddd;
 }
-#output {
+#output1 {
+    height: 400px;
+    padding: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#output2 {
     height: 400px;
     padding: 1rem;
     border: 1px solid #333;

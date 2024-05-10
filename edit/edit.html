@@ -1,60 +1,77 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="stylesheet" href="edit.css">
-    </head>  
-        <body>
-            <div class="container">
-                <div class="toolbar">
-                    <ul class="tool-list">
-                        <li class="tool">
-                            <button type="button" data-command='justifyLeft' class="tool--btn">
-                                <i class=' fas fa-align-left'></i>
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button type="button" data-command='justifyCenter' class="tool--btn">
-                                <i class=' fas fa-align-center'></i>
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button type="button" data-command="bold" class="tool--btn">
-                                <i class=' fas fa-bold'></i>
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button type="button" data-command="italic" class="tool--btn">
-                                <i class=' fas fa-italic'></i>
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button type="button" data-command="underline" class="tool--btn">
-                                <i class=' fas fa-underline'></i>
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button type="button" data-command="insertOrderedList" class="tool--btn">
-                                <i class=' fas fa-list-ol'></i>
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button type="button" data-command="insertUnorderedList" class="tool--btn">
-                                <i class=' fas fa-list-ul'></i>
-                            </button>
-                        </li>
-                        <li class="tool">
-                            <button type="button" data-command="createlink" class="tool--btn">
-                                <i class=' fas fa-link'></i>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-        
-                <div id="output" contenteditable="true"></div>
-        
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="edit.css">
+</head>
+
+<body>
+    <div class="editor-container">
+        <div class="toolbar-container">
+            <div class="toolbar">
+                <ul class="tool-list">
+                    <li class="tool">
+                        <button type="button" data-command='justifyLeft' class="tool--btn">
+                            <i class=' fas fa-align-left'></i>
+                        </button>
+                    </li>
+                    <li class="tool">
+                        <button type="button" data-command='justifyCenter' class="tool--btn">
+                            <i class=' fas fa-align-center'></i>
+                        </button>
+                    </li>
+                    <li class="tool">
+                        <button type="button" data-command="bold" class="tool--btn">
+                            <i class=' fas fa-bold'></i>
+                        </button>
+                    </li>
+                    <li class="tool">
+                        <button type="button" data-command="italic" class="tool--btn">
+                            <i class=' fas fa-italic'></i>
+                        </button>
+                    </li>
+                    <li class="tool">
+                        <button type="button" data-command="underline" class="tool--btn">
+                            <i class=' fas fa-underline'></i>
+                        </button>
+                    </li>
+                    <li class="tool">
+                        <button type="button" data-command="insertOrderedList" class="tool--btn">
+                            <i class=' fas fa-list-ol'></i>
+                        </button>
+                    </li>
+                    <li class="tool">
+                        <button type="button" data-command="insertUnorderedList" class="tool--btn">
+                            <i class=' fas fa-list-ul'></i>
+                        </button>
+                    </li>
+                    <li class="tool">
+                        <button type="button" data-command="createlink" class="tool--btn">
+                            <i class=' fas fa-link'></i>
+                        </button>
+                    </li>
+                </ul>
             </div>
-            <script type="text/javascript" src="edit.js"></script>
-            
-        </body>
+        </div>
+        <div class="textbox-container">
+            <div id="output1" contenteditable="true">
+
+            </div>
+        </div>
+        <div class="preview-container">
+            <div class="compile-container">
+            </div>
+            <div class="textbox-container">
+
+
+                <div id="output2" contenteditable="false"></div>
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="edit.js"></script>
+
+</body>
+
 </html>
