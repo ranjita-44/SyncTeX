@@ -1,26 +1,30 @@
-*,
 *:before,
 *:after {
     box-sizing: border-box;
 }
-body{
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    background-color: #f5f5f5;
-}
-.tool-container{
-    width: 60%;
-    display: grid;
-    gap: 0;
-}
-.textbox-container {
-    display: flex; /* Enables flexbox layout */
-    justify-content: flex-start; /* Aligns items to the start of the container */
-}
-.flex-textbox-container {
+
+body {
     display: flex;
-    justify-content: space-between; /* Ensures space between the divs */
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    margin: 0; /* Remove default margin */
+}
+
+.toolbar-container {
+    padding: 20px;
+    background-color: #f5f5f5; /* Add a background color for better visibility */
+}
+
+.toolbar {
+    display: flex;
+    justify-content: center; /* Center the toolbar items */
+}
+
+.side-by-side-container {
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%; 
+    padding: 20px;
 }
 
 .tool-list {
@@ -35,6 +39,7 @@ body{
     border-radius: 5px;
     background-color: white;
 }
+
 .tool--btn {
     display: block;
     border: none;
@@ -44,21 +49,33 @@ body{
     font-size: 16px;
     cursor: pointer;
 }
-.tool--btn:hover{
+
+.tool--btn:hover {
     background-color: #dddddd;
 }
-#output1 {
-    height: 400px;
-    padding: 1rem;
-    border: 1px solid #333;
+
+#output1, #output2 {
+    flex: 1;
+    width: 45%; /* Adjust width to ensure they fit side by side */
+    height: 80vh; 
+    padding: 1rem; /* Reduced padding */
+    border: 1px solid #333; 
+    border-radius: 5px; 
+    background-color: white; 
+}
+#compile-button {
+    display: block;
+    border: none;
     border-radius: 5px;
-    background-color: white;
+    height: 30px;
+    width: 70px; /* Slightly wider to accommodate text */
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f5f5f5; /* Light gray background */
+    color: #333; /* Darker text color */
+    text-align: center; /* Center text within the button */
 }
 
-#output2 {
-    height: 400px;
-    padding: 1rem;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background-color: white;
+#compile-button:hover {
+    background-color: #dddddd;
 }

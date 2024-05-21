@@ -4,10 +4,13 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="edit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.10/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.10/katex.min.js"></script>
+
 </head>
 
 <body>
-    <div class="editor-container">
+    
         <div class="toolbar-container">
             <div class="toolbar">
                 <ul class="tool-list">
@@ -51,24 +54,21 @@
                             <i class=' fas fa-link'></i>
                         </button>
                     </li>
+                    <li class="tool">
+                        <button type="button" id="compile-button" class="tool--btn">
+                            Compile
+                        </button>
+                    </li>
+                    
                 </ul>
             </div>
+        
+               
+        <div class="side-by-side-container">
+            <div id="output1" contenteditable="true"></div>
+            <div id="output2" contenteditable="false"></div>
         </div>
-        <div class="textbox-container">
-            <div id="output1" contenteditable="true">
-
-            </div>
-        </div>
-        <div class="preview-container">
-            <div class="compile-container">
-            </div>
-            <div class="textbox-container">
-
-
-                <div id="output2" contenteditable="false"></div>
-            </div>
-
-        </div>
+        
 
         <script type="text/javascript" src="edit.js"></script>
 
