@@ -63,6 +63,21 @@ body {
     border-radius: 5px; 
     background-color: white; 
 }
+
+#output1{
+    margin-right: 10px; /* Add margin to separate the outputs */
+}
+
+#output2 {
+    margin-left: 10px; /* Add margin to separate the outputs */
+}
+
+#compile-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
 #compile-button {
     display: block;
     border: none;
