@@ -1,0 +1,65 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 800vh; /* Ensure the body takes at least the full viewport height */
+    margin: 0; /* Remove default margin */
+}
+.side-by-side-container {
+    padding: 20px;
+    
+        display: flex; 
+        justify-content: space-between; 
+        width: 100%; 
+}
+.tool-container{
+    width: 60%;
+    display: grid;
+    gap: 20px;
+    
+}
+.textbox-container {
+    display: flex; /* Enables flexbox layout */
+    justify-content: flex-start; /* Aligns items to the start of the container */
+    flex-direction: column;
+}
+
+
+.tool-list {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+    gap: 10px;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+.tool--btn {
+    display: block;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.tool--btn:hover{
+    background-color: #dddddd;
+}
+
+#output1, #output2 {
+    flex: 1;
+    width: 80%; 
+height: 80vh; 
+    padding: 10rem;     
+    border: 1px solid #333; 
+    border-radius: 5px; 
+    background-color: white; 
+}
