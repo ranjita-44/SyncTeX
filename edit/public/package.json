@@ -1,0 +1,17 @@
+{
+  "name": "edit",
+  "version": "1.0.0",
+  "description": "editing page",
+  "main": "index.js",
+  "scripts": {
+        "start": "http-server -c-1 -p 12345 public",
+        "compile": "browserify src/app.js -o public/js/app.js -d"
+  },
+  "author": "ashwini",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "http": "^0.0.1-security",
+    "server": "^1.0.39"
+  }
+}
