@@ -1,3 +1,17 @@
+/* Root Variables */
+:root {
+    --white: #ffffff;
+    --light-blue: #a3d0d6;
+    --very-light-blue: #e7f1f2;
+    --primary-green: #00a79d;
+    --dark-green: #069295;
+    --font-family: 'Poppins', sans-serif;
+    --header-height: 60px;
+    --black: #000000
+
+}
+
+
 *,
 *:before,
 *:after {
@@ -6,8 +20,9 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 800vh; /* Ensure the body takes at least the full viewport height */
-    margin: 0; /* Remove default margin */
+    min-height: 800vh; 
+    margin: 0; 
+    background-color: #A3D0D6;
 }
 .side-by-side-container {
     padding: 20px;
@@ -20,12 +35,12 @@ body {
     width: 60%;
     display: grid;
     gap: 20px;
-    
+    background-color: #000;
+        
 }
 .textbox-container {
-    display: flex; /* Enables flexbox layout */
-    justify-content: flex-start; /* Aligns items to the start of the container */
-    flex-direction: column;
+    display: flex; 
+    justify-content: flex-start;
 }
 
 
