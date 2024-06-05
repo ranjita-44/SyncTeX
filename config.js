@@ -1,5 +1,6 @@
-const { signInWithEmailAndPassword } = require("firebase/auth");
-const { default: firebase } = require("firebase/compat/app");
+import { initializeApp } from "firebase/app";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getDatabase, ref, push, set, update, serverTimestamp } from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCkRs-4YJk27U8ugfIw99k3_dv0OIWvQ-4",
@@ -9,16 +10,22 @@ const firebaseConfig = {
     storageBucket: "synctex-53952.appspot.com",
     messagingSenderId: "282257968594",
     appId: "1:282257968594:web:de32fc03faabb353cb0c0b"
-  };
+};
 
-  //initialize firebase 
-  firebase.initializeApp(firebaseConfig);
+// Initializing Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const database = getDatabase(app);
 
 
-// Reference for sign-up form
-var authFormRef = firebase.database().ref('auth-form');
+document.addEventListener('DOMContentLoaded', () => {
+    var authFormRef = ref(database, 'auth-form');
+    var signInForm = document.getElementById('login');
 
-document.getElementById('auth-form').addEventListener('submit', submitForm);
+    document.getElementById('auth-form').addEventListener('submit', submitForm);
+    signInForm.addEventListener('submit', submitSignIN);
+    document.getElementById('google-signin').addEventListener('click', googleSignIn);
+});
 
 function submitForm(e) {
     e.preventDefault();
@@ -36,14 +43,13 @@ function submitForm(e) {
     }
 }
 
-const saveData = (firstName, lastName, registerEmail, registerPassword) => {
-    var newAuthForm = authFormRef.push();
+const saveData = (firstName, lastName, registerEmail) => {
+    var newAuthForm = push(ref(database, 'auth-form'));
 
-    newAuthForm.set({
+    set(newAuthForm, {
         firstName: firstName,
         lastName: lastName,
-        registerEmail: registerEmail,
-        registerPassword: registerPassword,
+        registerEmail: registerEmail
     }, (error) => {
         if (error) {
             console.error("Data could not be saved." + error);
@@ -94,19 +100,23 @@ const displayError = (message) => {
     }, 5000);
 };
 
+const displaySuccessMessage = (message) => {
+    const successMessageElement = document.querySelector('.success-message');
+    successMessageElement.innerText = message;
+    successMessageElement.style.display = 'block';
+
+    setTimeout(() => {
+        successMessageElement.style.display = 'none';
+    }, 3000);
+};
+
 const checkEmailAndRegister = (firstName, lastName, registerEmail, registerPassword) => {
-    firebase.auth().createUserWithEmailAndPassword(registerEmail, registerPassword)
+    createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
         .then((userCredential) => {
             // User registered successfully
-            saveData(firstName, lastName, registerEmail, registerPassword);
+            saveData(firstName, lastName, registerEmail);
 
-            // Enable alert
-            document.querySelector('.register-message').style.display = "block";
-
-            // Remove alert message after 3 seconds
-            setTimeout(() => {
-                document.querySelector('.register-message').style.display = "none";
-            }, 3000);
+            displaySuccessMessage("Registration successful!");
 
             // Reset the form
             document.getElementById("auth-form").reset();
@@ -129,12 +139,6 @@ const checkEmailAndRegister = (firstName, lastName, registerEmail, registerPassw
         });
 };
 
-// Reference to the sign-in form
-var signInForm = document.getElementById('login');
-
-// Adding event listener for the form submission
-signInForm.addEventListener('submit', submitSignIN);
-
 function submitSignIN(e) {
     e.preventDefault();
 
@@ -145,20 +149,21 @@ function submitSignIN(e) {
     if (errorMessageLogin) {
         displayErrorLogin(errorMessageLogin);
     } else {
-        signInWithEmailAndPassword(signInEmail, signInPassword);
+        signInUser(signInEmail, signInPassword);
     }
 }
 
-// Function to sign in the user with email and password using Firebase Authentication
-function signInWithEmailAndPassword(email, password) {
-    firebase.auth().signInWithEmailAndPassword(email, password)
+function signInUser(email, password) {
+    signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Sign-in successful
+
+            // successfully signed-in
             var user = userCredential.user;
             console.log("User signed in:", user.uid);
-            // Update the last sign-in time in Firebase database
+
+            // Updating timestamp
             updateSignInData(user.uid);
-            // Display success message
+
             displaySuccessMessage("You have been logged in.");
         })
         .catch((error) => {
@@ -173,12 +178,10 @@ function signInWithEmailAndPassword(email, password) {
             } else {
                 errorMessageLogin = error.message;
             }
-            // Display error message
             displayErrorLogin(errorMessageLogin);
         });
 }
 
-// Function to validate the sign-in form inputs
 function validateSignInForm(email, password) {
     if (!email || !password) {
         return "Both email and password are required.";
@@ -189,67 +192,37 @@ function validateSignInForm(email, password) {
     return null;
 }
 
-// Function to display sign-in error messages
 function displayErrorLogin(messageLogin) {
     const errorMessageLoginElement = document.querySelector('.error-message-login');
     errorMessageLoginElement.innerText = messageLogin;
     errorMessageLoginElement.style.display = 'block';
 
-    // Remove error message after 3 seconds
     setTimeout(() => {
         errorMessageLoginElement.style.display = 'none';
     }, 3000);
 }
 
-// Function to display success message
-function displaySuccessMessage(message) {
-    const successMessageElement = document.querySelector('.success-message');
-    successMessageElement.innerText = message;
-    successMessageElement.style.display = 'block';
-
-    // Remove success message after 3 seconds
-    setTimeout(() => {
-        successMessageElement.style.display = 'none';
-    }, 3000);
-}
-
-// Function to update the last sign-in data in Firebase database
 function updateSignInData(uid) {
-    var userRef = firebase.database().ref('users/' + uid);
-    userRef.update({
-        lastSignInTime: firebase.database.ServerValue.TIMESTAMP
+    var userRef = ref(database, 'users/' + uid);
+    update(userRef, {
+        lastSignInTime: serverTimestamp()
     });
 }
-
-// Continue with Google
-document.getElementById('google-signin').addEventListener('click', googleSignIn);
 
 function googleSignIn(e) {
     e.preventDefault();
 
-    var provider = new firebase.auth.GoogleAuthProvider();
+    var provider = new GoogleAuthProvider();
 
-    firebase.auth().signInWithPopup(provider)
+    signInWithPopup(auth, provider)
         .then((result) => {
-            // The signed-in user info.
             var user = result.user;
             console.log("User signed in: ", user);
 
-            // Show registration success message
-            document.querySelector('.register-message').innerText = "Google sign-in successful!";
-            document.querySelector('.register-message').style.display = "block";
-
-            // Remove alert message after 3 seconds
-            setTimeout(() => {
-                document.querySelector('.register-message').style.display = "none";
-            }, 3000);
+            displaySuccessMessage("Google sign-in successful!");
         })
         .catch((error) => {
             console.error("Error during Google sign-in: ", error);
             displayError("Error during Google sign-in: " + error.message);
         });
 }
-
-
-
-
