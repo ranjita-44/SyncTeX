@@ -95,13 +95,17 @@
 .nav{
     position: fixed;
     top: 0;
+    left: 0; 
+    right: 0;
+    width: auto;
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
     height: 100px;
-    line-height: 100px;
-    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
-    z-index: 100;
+    padding: 10px 20px;
+    background-color:#A3D0D6;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 .nav-logo img {
     width: 180px;
@@ -517,15 +521,6 @@ header {
     color: var(--black);
     padding: 10px 0;
     height: var(--header-height);
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .logo {
