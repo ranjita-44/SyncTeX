@@ -140,3 +140,42 @@ body {
         font-size: 20px;
     }
 }
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-item {
+    background-color: #d9f3f7;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.project-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.project-description {
+    font-size: 14px;
+}
+/* for smaller screens */
+@media (max-width: 768px) {
+    .toggle-sidebar-button {
+        display: block;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        height: 100%;
+        transition: left 0.3s;
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
+}
