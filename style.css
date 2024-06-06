@@ -10,51 +10,6 @@
         background-color: white; 
    }
     
-   .typing-text {
-
-    display: inline-block;
-    font-size: 36px;
-    font-weight: bold;
-    color: #0fc1c1b3; 
-    overflow: hidden;
-    border-right: .15em solid rgb(0, 0, 0); 
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .15em;
-    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
-    
-   
-    font-family: 'Courier New', Courier, monospace; 
-}
-
-    @keyframes typing {
-        from {
-            width: 0
-        }
-        to {
-            width: 100%
-        }
-    }
-    
-    @keyframes blink-caret {
-        from, to {
-            border-color: transparent
-        }
-        50% {
-            border-color: rgb(0, 0, 0)
-        }
-    }
-    
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: white;
- 
-}
-
 .welcome-text {
     text-align: center;
     color: #000; 
@@ -97,11 +52,11 @@
     top: 0;
     left: 0; 
     right: 0;
-    width: auto;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 80px;
     padding: 10px 20px;
     background-color:#A3D0D6;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -153,6 +108,51 @@
 .nav-menu-btn{
     display: none;
 }
+
+.typing-text {
+
+    display: inline-block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #0fc1c1b3; 
+    overflow: hidden;
+    border-right: .15em solid rgb(0, 0, 0); 
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+    @keyframes typing {
+        from {
+            width: 0
+        }
+        to {
+            width: 100%
+        }
+    }
+    
+    @keyframes blink-caret {
+        from, to {
+            border-color: transparent
+        }
+        50% {
+            border-color: rgb(0, 0, 0)
+        }
+    }
+    
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+    padding-top: 100px;
+ 
+}
+
 
 .login-container{
     position: absolute;
@@ -219,9 +219,6 @@ header{
     left: 17px;
     color: black;
 }
-
-
-
 .submit{
     font-size: 15px;
     font-weight: 500;
@@ -427,10 +424,6 @@ header{
     border-radius: 30px;
     color: white
 }
-
-
-
-  
 .register-message{
 
     text-align: center;
@@ -485,12 +478,6 @@ header{
 
     
 }
-
-
-
-
-
- 
 /* Root Variables */
 :root {
     --white: #ffffff;
