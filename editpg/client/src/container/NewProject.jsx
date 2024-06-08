@@ -19,7 +19,7 @@ const NewProject = () => {
         <Splitpane split="vertical" minSize={100} max={-100} defaultSize={"50%"}>
 
           <div className="w-full px-2">
-          <CodeMirror value="console.log('hello');" height="600px" extensions={[javascript({ jsx: true })]} onChange={() =>{}} />;
+          <CodeMirror value="console.log('hello');" height="600rem" extensions={[javascript({ jsx: true })]} onChange={() =>{}} />;
           </div>
 
 
