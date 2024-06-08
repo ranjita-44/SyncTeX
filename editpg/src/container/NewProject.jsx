@@ -1,6 +1,9 @@
 import React from "react";
 import Splitpane from "react-split-pane";
 
+import CodeMirror from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
+
 const NewProject = () => {
   return <>
 
@@ -12,19 +15,19 @@ const NewProject = () => {
 
       {/*coding section */}
       <div>
-        {/*horizontal */}
-        <Splitpane split="horizontal" minSize={100} max={-100} defaultSize={"50%"}></Splitpane>
 
-        {/*top coding section */}
+        <Splitpane split="vertical" minSize={100} max={-100} defaultSize={"50%"}>
+
+          <div className="w-full px-2">
+          <CodeMirror value="console.log('hello');" height="600px" extensions={[javascript({ jsx: true })]} onChange={() =>{}} />;
+          </div>
 
 
-        {/*bottom result section */}
 
-        {/*vertical section */}
+          <div className="w-full h-full flex items-start justify-start"></div>
 
-        {/*left coding section */}
 
-        {/*right result section */}
+        </Splitpane>
       </div>
 
 
