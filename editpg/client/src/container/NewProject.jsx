@@ -1,24 +1,29 @@
 import React from "react";
-import {useEffect, useState } from "react";
 import Splitpane from "react-split-pane";
+
 import CodeMirror from '@uiw/react-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
+
 import { motion, AnimatePresence } from "framer-motion";
+
 import synctex from '../assets/synctex.svg';
 
 
 
-const NewProject = ({value,onValueChange}) => {
+const NewProject = () => {
 
-  const [title, setTitle] = useState("Untitled");
   const [isTitle, setisTitle] = useState("");
 
   return <>
 
+
+
     <div className="w-screen h-screen flex flex-col items-start justify-start overflow-hidden">
 
-      {/*header section*/}
-      <header className="w-full flex items-center justify-betweenpx-12 py-1 bg-[#1f666d]">
+      {/*alert section */}
+
+      {/*header section */}
+      <header className="w-full flex items-center justify-betweenpx-12 py-4 bg-[#cbcdd4]">
         <div className="flex items-center justify-center gap6  ">
 
           {/*<Link to={"/home/projects"}> */}
@@ -34,39 +39,8 @@ const NewProject = ({value,onValueChange}) => {
 
             <div className="flex items-center justify-center gap3">
               <AnimatePresence> {isTitle ? <>
-                <motion.input key={"TitleInput"}
-                  type="text"
-                  placeholder="Project Title"
-                  value={title}
-                  onvalueChange={(e) => setisTitle(e.target.value)} />
 
-              </> : <>
-                <motion.p key={"titleLabel"}
-                  className="px-3 py-2 text-white text-lg">
-                  {title}
-
-                </motion.p>
-
-              </>}
-
-              </AnimatePresence>
-
-              <AnimatePresence>
-                {isTitle ? (
-                  <>
-                    <motion.div key={"MdCheck"} whileTap={{ scale: 0.9 }}
-                      className="cursor-pointer" onClick={() => setTitle(false)}> </motion.div>
-
-                      
-                  </>
-                ) :(
-                  <>
-                  <motion.div key={"MdEdit"} whileTap={{ scale: 0.9 }}
-                      className="cursor-pointer" onClick={() => setTitle(true)}> </motion.div>
-
-
-                  </>)
-                  }
+              </> : <> </>}
 
               </AnimatePresence>
 
@@ -91,9 +65,9 @@ const NewProject = ({value,onValueChange}) => {
           {/*file Navigation*/}
           <div className="flex flex-col">
 
-            <div className="bg-[#1d5a5a] p-4 h-12 flex items-center justify-between">
+            <div className="bg-[#5f6063] p-4 h-12 flex items-center justify-between">
 
-              <h2 className="text-lg font-semibold ">File Navigation</h2>
+              <h2 className="text-lg font-semibold">Pane 1</h2>
 
             </div>
 
@@ -108,7 +82,7 @@ const NewProject = ({value,onValueChange}) => {
           <Splitpane split="vertical" minSize={100} maxSize={-100} defaultSize={"50%"}>
 
             <div className="flex flex-col">
-              <div className="bg-[#1d5a5a] p-1 h-12 flex items-center justify-between">
+              <div className="bg-[#5f6063] p-1 h-12 flex items-center justify-between">
 
                 <h2 className="text-lg font-semibold">Code Editor</h2>
 
@@ -116,7 +90,7 @@ const NewProject = ({value,onValueChange}) => {
 
               <div className="flex-grow">
 
-                <CodeMirror value={value} height="600rem" extensions={[javascript({ jsx: true })]} onvalueChange={(e) => { onValueChange(e)}} />;
+                <CodeMirror value="console.log('hello');" height="600rem" extensions={[javascript({ jsx: true })]} onChange={() => { }} />;
 
               </div>
 
@@ -126,7 +100,7 @@ const NewProject = ({value,onValueChange}) => {
 
             <div className="flex flex-col">
 
-              <div className="bg-[#1d5a5a] p-1 h-12 flex items-center justify-between">
+              <div className="bg-[#5f6063] p-1 h-12 flex items-center justify-between">
 
                 <h2 className="text-lg font-semibold">Preview</h2>
 
