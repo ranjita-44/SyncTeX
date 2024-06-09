@@ -18,19 +18,11 @@ const io = new Server(server, {
 });
 
 io.on("connection", (Socket)=>{
-    // connection -> projectid sanga room banauna paryo
     console.log(`User Connected: ${Socket.id}`);
     Socket.on ("send_message", (data)=>{
         console.log(data)
     })
-
-    Socket.on("value",(data)=>{
-        console.log(data);
-        // broadcast to room only
-        Socket.broadcast.emit("value",data)
-    })
 })
-
 
 
 server.listen(3001, () =>{

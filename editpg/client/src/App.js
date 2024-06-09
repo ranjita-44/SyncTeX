@@ -24,7 +24,7 @@ const App = () => {
     function onValueChange(val) {
         // console.log(val);
         setEditorValue(editorValue)
-        socket.emit("value", val)
+        socket.broadcast.emit("value", val)
     }
 
     return (

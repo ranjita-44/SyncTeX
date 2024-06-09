@@ -1,5 +1,3 @@
-//importing required dependencies
-
 import React from "react";
 import {useEffect, useState } from "react";
 import Splitpane from "react-split-pane";
@@ -40,7 +38,7 @@ const NewProject = ({value,onValueChange}) => {
                   type="text"
                   placeholder="Project Title"
                   value={title}
-                  onChange={(e) => setisTitle(e.target.value)} />
+                  onvalueChange={(e) => setisTitle(e.target.value)} />
 
               </> : <>
                 <motion.p key={"titleLabel"}
@@ -118,7 +116,7 @@ const NewProject = ({value,onValueChange}) => {
 
               <div className="flex-grow">
 
-                <CodeMirror value={value} height="600rem" extensions={[javascript({ jsx: true })]} onChange={(e) => { onValueChange(e)}} />;
+                <CodeMirror value={value} height="600rem" extensions={[javascript({ jsx: true })]} onvalueChange={(e) => { onValueChange(e)}} />;
 
               </div>
 
