@@ -4,6 +4,7 @@ const http = require("http");
 
 const { Server } = require("socket.io");
 const cors= require("cors");
+const { Socket } = require("dgram");
 
 app.use(cors());
 
@@ -15,6 +16,13 @@ const io = new Server(server, {
         methods: ["GET", "POST"],
     },
 });
+
+io.on("connection", (Socket)=>{
+    console.log(`User Connected: ${Socket.id}`);
+    Socket.on ("send_message", (data)=>{
+        console.log(data)
+    })
+})
 
 
 server.listen(3001, () =>{

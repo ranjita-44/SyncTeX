@@ -14,7 +14,7 @@ const NewProject = () => {
       {/*header section */}
 
       {/*coding section */}
-      <div>
+      <div id="code_section">
 
         <Splitpane split="vertical" minSize={100} max={-100} defaultSize={"50%"}>
 
