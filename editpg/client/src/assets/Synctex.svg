@@ -1,13 +1,12 @@
-<svg width="500" height="320" viewBox="0 0 500 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="500" height="320" fill="#1E1E1E"/>
-<path d="M50.92 152.32C58.45 132.55 77.58 118.5 100 118.5C119.01 118.5 135.66 128.6 144.87 143.73" stroke="#808285" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M48.57 181.58C47.87 178.16 47.5 174.62 47.5 171C47.5 164.42 48.71 158.13 50.92 152.32" stroke="#231F20" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M59.74 204.7C56.53 200.87 53.86 196.57 51.84 191.93" stroke="#00A79D" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M151.42 160.34C152.13 163.78 152.5 167.35 152.5 171C152.5 199.99 128.99 223.5 100 223.5C86.65 223.5 74.46 218.52 65.2 210.31" stroke="#231F20" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M88.26 214.45C86.6 214 84.97 213.46 83.39 212.83" stroke="#00A79D" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M57.21 184.97C55.77 180.57 55 175.87 55 171C55 146.15 75.15 126 100 126C124.85 126 145 146.15 145 171C145 195.85 124.85 216 100 216C95.94 216 92.01 215.46 88.26 214.45" stroke="#00A79D" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M59.68 191.01C58.72 189.07 57.89 187.06 57.21 184.97" stroke="#00A79D" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M137.42 173.52C136.12 193.05 119.87 208.5 100 208.5C89.53 208.5 80.07 204.21 73.26 197.29" stroke="#808285" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M137.5 171C137.5 171.85 137.47 172.69 137.42 173.52" stroke="#808285" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M63.26 178.56C62.76 176.12 62.5 173.59 62.5 171C62.5 150.29 79.29 133.5 100 133.5C110.36 133.5 119.73 137.7 126.52 144.48" stroke="#231F20" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.91998 36.32C13.45 16.55 32.58 2.5 55 2.5C74.01 2.5 90.66 12.6 99.87 27.73" stroke="#808285" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3.57 65.58C2.87 62.16 2.5 58.62 2.5 55C2.5 48.42 3.71 42.13 5.92 36.32" stroke="#231F20" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.74 88.7C11.53 84.87 8.86 80.57 6.84 75.93" stroke="#00A79D" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M106.42 44.34C107.13 47.78 107.5 51.35 107.5 55C107.5 83.99 83.99 107.5 55 107.5C41.65 107.5 29.46 102.52 20.2 94.31" stroke="#231F20" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M43.26 98.45C41.6 98 39.97 97.46 38.39 96.83" stroke="#00A79D" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.21 68.97C10.77 64.57 10 59.87 10 55C10 30.15 30.15 10 55 10C79.85 10 100 30.15 100 55C100 79.85 79.85 100 55 100C50.94 100 47.01 99.46 43.26 98.45" stroke="#00A79D" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.68 75.01C13.72 73.07 12.89 71.06 12.21 68.97" stroke="#00A79D" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M92.42 57.52C91.12 77.05 74.87 92.5 55 92.5C44.53 92.5 35.07 88.21 28.26 81.29" stroke="#808285" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M92.5 55C92.5 55.85 92.47 56.69 92.42 57.52" stroke="#808285" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.26 62.56C17.76 60.12 17.5 57.59 17.5 55C17.5 34.29 34.29 17.5 55 17.5C65.36 17.5 74.73 21.7 81.52 28.48" stroke="#231F20" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
