@@ -53,4 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
             sidebar.classList.toggle('open');
         });
     }
+
+    // Get the button element
+    const newProjectButton = document.getElementById('newProjectButton');
+
+    // Add a click event listener to the button
+    newProjectButton.addEventListener('click', () => {
+        // Navigate to the editor page (replace 'editor.html' with the correct path)
+        window.location.href = '../../container/editor';
+    });
 });
