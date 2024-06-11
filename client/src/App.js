@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Home, Projects, NewProject } from "./container";
+import { Home, Projects, Editor } from "./container";
 
 
 
@@ -13,13 +13,13 @@ const App = () => {
       <Routes>
         <Route path="/Home/*" element={<Home />} />
 
-        <Route path="*" element={<Navigate to={"/Home"} />} />
+        <Route path="*" element={<Navigate to={"/Editor"} />} />
 
         
-        <Route path="/NewProject/*" element= {<NewProject/>} />
+        <Route path="/editor/*" element= {<Editor/>} />
 
         <Route path="/projects" component={Projects} />
-        <Route path="/project/:projectId" component={NewProject} />
+    
        
       </Routes>
     </div>
