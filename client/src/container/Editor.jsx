@@ -13,6 +13,7 @@ const Editor = () => {
 
   return (
     <div className="w-screen h-screen bg-[#4D4861] flex flex-col items-start justify-start overflow-hidden">
+      
       {/* Header section */}
       <header className="w-full flex items-center justify-between px-12 py-4 h-12 bg-[#2A2734]">
         <div className="flex items-center justify-center gap-6">

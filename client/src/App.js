@@ -1,27 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Home, Projects, Editor } from "./container";
-
-
-
+import { Editor } from "./container";
 
 const App = () => {
   const [editorValue, setEditorValue] = useState("");
 
   return (
-    <div className="w-screen h-screen items-start justify-start overflow-hidden ">
+    <div className="w-screen h-screen items-start justify-start overflow-hidden">
       <Routes>
-        <Route path="/Home/*" element={<Home />} />
-
-        <Route path="*" element={<Navigate to={"/Editor"} />} />
+       
+        <Route path="/editor/*" element={<Editor />} />
+        <Route path="/login/*" element={<ExternalPage page="login/index.html" />} />
+        <Route path="/landing-page/*" element={<ExternalPage page="landing-page/index.html" />} />
 
         
-        <Route path="/editor/*" element= {<Editor/>} />
-
-        <Route path="/projects" component={Projects} />
-    
+        
        
       </Routes>
+    </div>
+  );
+};
+
+const ExternalPage = ({ page }) => {
+  return (
+    <div className="w-screen h-screen">
+      <iframe
+        src={`/${page}`}
+        width="100%"
+        height="100%"
+        title="External HTML Page"
+      />
     </div>
   );
 };
